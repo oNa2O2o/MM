@@ -55,11 +55,21 @@ copy skill.md %USERPROFILE%\.claude\skills\MM\skill.md
 
 ## 依赖 Skills
 
-本 skill 会自动调用以下 skills（需同步安装）：
+本 skill 会自动调用以下 skills，已包含在 `deps/` 目录中，安装时一并复制：
 
-- `hook-audit` — 开头钩子审核
-- `dialogue-check` — 台词AI味检测  
-- `seedance-prompt-zh` — Seedance提示词生成
+```powershell
+# Windows
+copy deps\hook-audit\SKILL.md %USERPROFILE%\.claude\skills\hook-audit\SKILL.md
+copy deps\dialogue-check\SKILL.md %USERPROFILE%\.claude\skills\dialogue-check\SKILL.md
+copy deps\seedance-prompt-zh\SKILL.md %USERPROFILE%\.claude\skills\seedance-prompt-zh\SKILL.md
+```
+
+```bash
+# macOS/Linux
+cp deps/hook-audit/SKILL.md ~/.claude/skills/hook-audit/SKILL.md
+cp deps/dialogue-check/SKILL.md ~/.claude/skills/dialogue-check/SKILL.md
+cp deps/seedance-prompt-zh/SKILL.md ~/.claude/skills/seedance-prompt-zh/SKILL.md
+```
 
 ---
 
