@@ -100,6 +100,21 @@ description: |
 2. 统一列出规则变动提案，用户一次性回复编号确认
 3. 用户确认的编号升级为L3，其余保留L0备注
 4. 更新Skill文件版本号
+5. 复盘完成后询问是否推送更新到GitHub
+
+### 推送到GitHub（复盘后可选）
+仓库地址：https://github.com/oNa2O2o/MM
+本地路径：`C:\Users\zhonghaiming5328\.claude\skills\MM`
+
+推送命令：
+```bash
+cd "C:\Users\zhonghaiming5328\.claude\skills\MM"
+git add .
+git commit -m "feat: MM skill vX.X.X — [本次更新内容]"
+git push origin main
+```
+
+如用户确认推送，直接执行上述命令，无需再问。
 
 ---
 
