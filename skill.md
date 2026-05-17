@@ -1,6 +1,6 @@
 ---
 name: MM
-version: 1.3.0
+version: 1.4.0
 description: |
   MiraiMind 买量素材创作。短视频广告脚本全流程：剧情创作、分镜设计、Seedance提示词、交付审核、规则复盘。
   依赖：hook-audit（开头审核）、dialogue-check（台词AI味）、seedance-prompt-zh（提示词生成）
@@ -115,15 +115,49 @@ description: |
 仓库地址：https://github.com/oNa2O2o/MM
 本地路径：`C:\Users\zhonghaiming5328\.claude\skills\MM`
 
-推送命令：
+**推送原则**：
+- commit message 格式：`feat: MM skill vX.X.X — [本次更新内容]`
+- 推送前确认版本号已更新
+- 用户确认后直接执行，无需再问
+
+**推送命令**：
 ```bash
 cd "C:\Users\zhonghaiming5328\.claude\skills\MM"
 git add .
 git commit -m "feat: MM skill vX.X.X — [本次更新内容]"
-git push origin main
+git push origin master
 ```
 
-如用户确认推送，直接执行上述命令，无需再问。
+**推送故障排除**：
+
+如果遇到 `Failed to connect to github.com` 错误：
+```bash
+# 配置 SSL 和缓冲区
+git config http.sslVerify false
+git config http.postBuffer 524288000
+git push origin master
+```
+
+如果遇到认证失败：
+```bash
+# 方案 1：配置 credential helper
+git config --global credential.helper store
+git push origin master
+
+# 方案 2：Token 嵌入 URL（推荐）
+git remote set-url origin https://TOKEN@github.com/oNa2O2o/MM.git
+git push origin master
+```
+
+如果需要使用 gh CLI：
+```bash
+# Windows 安装
+winget install --id GitHub.cli
+
+# 认证并推送
+export GH_TOKEN="your_token"
+gh repo create oNa2O2o/MM --public --source=. --remote=origin --push
+```
 
 ---
 
